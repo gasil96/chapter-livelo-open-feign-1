@@ -1,0 +1,36 @@
+#Application Info
+application-description: '@project.description@'
+application-title: '@project.name@'
+application-version: '@project.version@'
+
+#Url
+integration:
+  viacep:
+    name: viacep
+    url: viacep.com.br
+  catalago-produto:
+    name: catalago-produto
+    url: localhost:9999
+    login: admin
+    password: admin
+
+
+#Feign Configurations
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  main:
+    allow-bean-definition-overriding: true
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
+      viacep:
+        loggerLevel: full
+
+logging:
+  level:
+    ROOT: DEBUG
